@@ -36,7 +36,7 @@ public class EteamDefinition {
 	@And("^login the page$")
 	public void loginPage() {
 		Properties properties = new Properties();
-		File file = new File("config.property");
+		File file = new File("C:\\Eclipse_workspace\\seleniumweb\\src\\main\\resources\\config.property");
 		InputStream inputStreamStream;
 		try {
 			inputStreamStream = new FileInputStream(file);
@@ -46,7 +46,7 @@ public class EteamDefinition {
 		}
 		driver.findElement(By.xpath("//*[@id=\"top-btn-login\"]")).click();
 		driver.findElement(By.xpath("//*[@id=\"username\"]")).clear();
-		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys(properties.getProperty("usename"));
+		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys(properties.getProperty("username"));
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(properties.getProperty("password"));
 		driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[5]/button")).click();
