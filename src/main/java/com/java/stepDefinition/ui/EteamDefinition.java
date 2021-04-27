@@ -26,7 +26,7 @@ public class EteamDefinition {
 
 	@Given("^open the Eteam homepage$")
 	public void openHomePage() {
-		System.setProperty("webdriver.chrome.driver","src\\main\\resources\\Drivers\\chromedriver");
+		System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://eteams.cn");
 		driver.manage().window().maximize();
