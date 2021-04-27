@@ -10,6 +10,7 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,6 +29,12 @@ public class EteamDefinition {
 	public void openHomePage() {
 		System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver");
 		driver = new ChromeDriver();
+		ChromeOptions chromeOptions = new ChromeOptions();
+		// 禁用沙箱
+		chromeOptions.addArguments("--no-sandbox");
+		chromeOptions.addArguments("--disable-dev-shm-usage");
+	    chromeOptions.addArguments("--headless");
+
 		driver.get("https://eteams.cn");
 		driver.manage().window().maximize();
 		
