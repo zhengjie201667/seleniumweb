@@ -28,13 +28,13 @@ public class EteamDefinition {
 	@Given("^open the Eteam homepage$")
 	public void openHomePage() {
 		System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver");
-		driver = new ChromeDriver();
-		ChromeOptions chromeOptions = new ChromeOptions();
-		// 禁用沙箱
-		chromeOptions.addArguments("--no-sandbox");
-		chromeOptions.addArguments("--disable-dev-shm-usage");
-	    chromeOptions.addArguments("--headless");
-
+		ChromeOptions chrome_options = new ChromeOptions();
+				chrome_options.addArguments("--headless");
+				chrome_options.addArguments("--disable-gpu");
+				chrome_options.addArguments("window-size=1024,768");
+				chrome_options.addArguments("--no-sandbox");
+				driver = new ChromeDriver(chrome_options);
+				
 		driver.get("https://eteams.cn");
 		driver.manage().window().maximize();
 		
