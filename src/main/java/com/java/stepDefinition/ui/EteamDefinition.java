@@ -43,7 +43,7 @@ public class EteamDefinition {
 	@And("^login the page$")
 	public void loginPage() {
 		Properties properties = new Properties();
-		File file = new File("/src/main/resources/config.property");
+		File file = new File("src/main/resources/config.property");
 		InputStream inputStreamStream;
 		try {
 			inputStreamStream = new FileInputStream(file);
